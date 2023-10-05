@@ -22,6 +22,14 @@ const directorSchema = new mongoose.Schema({
             },
             message: '{VALUE} is not an integer value'
         }
+    },
+    iconImage: {
+        type: Buffer,
+        required: true
+    },
+    iconImageType: {
+        type: String,
+        required: true
     }
 })
 
@@ -37,5 +45,11 @@ directorSchema.pre('remove', async function(next) {
         next(err);
     }
 });
+
+directorSchema.virtual('iconImagePath').get(function() {
+    if (this.iconImage != null && this.iconImageType != null) {
+        return `data:${this.iconImageType};charset=utf-8;base64,${this.iconImage.toString('base64')}`
+    }
+})
 
 module.exports = new mongoose.model('Director', directorSchema)

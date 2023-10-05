@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Director = require('../models/director')
 const Movie = require('../models/movie')
+const imageMimeTypes = ['image/jpeg', 'image/png', 'image/gif']
 
 // All Directors Route
 router.get('/', async (req, res) => {
@@ -33,6 +34,7 @@ router.post('/', async (req, res) => {
         rating: req.body.rating,
         notes: req.body.notes
     })
+    saveIcon(director, req.body.icon)
     try {
         const newDirector = await director.save()
         res.redirect(`directors/${newDirector.id}`)
@@ -77,6 +79,9 @@ router.put('/:id', async (req, res) => {
         director.description = req.body.description
         director.rating = req.body.rating
         director.notes = req.body.notes
+        if (req.body.icon != null && req.body.icon != '') {
+            saveIcon(director, req.body.icon)
+        }
         await director.save()
         res.redirect(`/directors/${director.id}`)
     } catch {
@@ -113,5 +118,14 @@ router.delete('/:id', async (req, res) => {
         res.redirect('/')
     }
 })
+
+function saveIcon(director, iconEncoded) {
+    if (iconEncoded == null) return
+    const icon = JSON.parse(iconEncoded)
+    if (icon != null && imageMimeTypes.includes(icon.type)) {
+        director.iconImage = new Buffer.from(icon.data, 'base64')
+        director.iconImageType = icon.type
+    }
+}
 
 module.exports = router
