@@ -1,4 +1,4 @@
-<h2>Search Directors</h2>
+<h2 class="page-header">Search Directors</h2>
 <form action="/directors" method="GET">
     <label>Name</label>
     <input type="text" name="name" value="<%= searchOptions.name ? searchOptions.name : '' %>">
@@ -8,9 +8,11 @@
 <% if(directors && directors.length > 0) { %>
     <% directors.forEach(director => { %>
         <div><%= director.name %></div>
-        <a href="/directors/<%= director.id %>">View</a>
-        <a href="/directors/<%= director.id %>/edit">Edit</a>
-        <%- include('../partials/deleteForm.ejs', { url: `/directors/${director.id}` }) %>
+        <div class="button-row">
+            <a class="button button-primary" href="/directors/<%= director.id %>">View</a>
+            <a class="button button-primary" href="/directors/<%= director.id %>/edit">Edit</a>
+            <%- include('../partials/deleteForm.ejs', { url: `/directors/${director.id}` }) %>
+        </div>
     <% }) %>
 <% } else { %>
     <p>No directors found</p>
