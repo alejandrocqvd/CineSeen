@@ -1,6 +1,8 @@
 <h2 class="page-header">Movie</h2>
 <form action="/movies" method="POST">
     <%- include('_form_fields') %>
-    <a href="/movies">Cancel</a>
-    <button type="submit">Create</button>
+    <div class="form-row form-row-end button-row">
+        <a class="button button-danger" href="/movies">Cancel</a>
+        <button class="button button-primary" type="submit">Create</button>
+    </div>
 </form>

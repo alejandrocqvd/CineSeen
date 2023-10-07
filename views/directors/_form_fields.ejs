@@ -1,20 +1,20 @@
-<div>
-    <label>Icon</label>
-    <input type="file" name="icon" class="filepond">
+<div class="form-row">
+    <div class="form-item">
+        <label>Name</label>
+        <input type="text" name="name" value="<%= director.name %>">
+    </div>
+    <div class="form-item">
+        <label>Rating</label>
+        <input class="rating" type="number" name="rating" min="0" max="10" value="<%= director.rating %>">
+    </div>
 </div>
-<div>
-    <label>Name</label>
-    <input type="text" name="name" value="<%= director.name %>">
-</div>
-<div>
-    <label>Rating</label>
-    <input type="number" name="rating" min="0" max="10" value="<%= director.rating %>">
-</div>
-<div>
-    <label>Description</label>
-    <textarea name="description"><%= director.description %></textarea>
-</div>
-<div>
-    <label>Notes</label>
-    <textarea name="notes"><%= director.notes %></textarea>
+<div class="form-row">
+    <div class="form-item form-item-no-grow">
+        <label>Icon</label>
+        <input type="file" name="icon" class="filepond">
+    </div>
+    <div class="form-item">
+        <label>Description</label>
+        <textarea name="description"><%= director.description %></textarea>
+    </div>
 </div>

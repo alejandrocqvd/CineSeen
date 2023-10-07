@@ -1,12 +1,13 @@
 <h2 class="page-header"><%= director.name %></h2>
+<div class="button-row">
+    <a class="button button-primary" href="/directors/<%= director.id %>/edit">Edit</a>
+    <%- include('../partials/deleteForm.ejs', { url: `/directors/${director.id}`}) %>
+</div>
 <img width="150" height="150" src="<%= director.iconImagePath %>">
 <div>Rating: <%= director.rating %></div>
 <div>Description: <%= director.description %></div>
-<div>Additional Notes: <%= director.notes %></div>
-<a href="/directors/<%= director.id %>/edit">Edit</a>
-<%- include('../partials/deleteForm.ejs', { url: `/directors/${director.id}`}) %>
 <% if (filmography.length > 0) { %>
-    <h2>Filmography</h2>
+    <h2 class="page-header">Filmography</h2>
     <% filmography.forEach(movie => { %>
         <img height="150" width="100" src="<%= movie.posterImagePath %>">
     <% }) %>
