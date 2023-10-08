@@ -7,7 +7,7 @@
 .movie-poster {
     width: var(--movie-poster-width);
     height: calc(var(--movie-poster-width) / var(--movie-poster-aspect-ratio));
-    border: 1px solid black;
+    border: 1px solid hsl(var(--color-base-hue), 90%, 95%);
     border-radius: 5px;
 }
 

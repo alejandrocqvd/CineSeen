@@ -4,5 +4,5 @@
     --color-danger-hue: calc(var(--color-base-hue) - var(--color-danger-hue-offset));
     --color-background-dark: hsl(var(--color-base-hue), 90%, 7%);
     --color-background-light: hsl(0, 100%, 10%);   
-    --color-text-light: hsl(var(--color-base-hue), 90%, 90%); 
+    --color-text-light: hsl(var(--color-base-hue), 90%, 95%); 
 }

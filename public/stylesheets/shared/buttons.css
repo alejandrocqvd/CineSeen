@@ -1,15 +1,15 @@
 :root {
-    --color-button-primary-text: hsl(var(--color-base-hue), 100%, 20%);
-    --color-button-primary-text-dark: hsl(var(--color-base-hue), 100%, 10%);
-    --color-button-primary-background: hsl(var(--color-base-hue), 100%, 90%);
-    --color-button-primary-background-dark: hsl(var(--color-base-hue), 100%, 70%);
+    --color-button-primary-text: black;
+    --color-button-primary-text-dark: black;
+    --color-button-primary-background: hsl(50, 60%, 60%);
+    --color-button-primary-background-dark: hsl(50, 60%, 45%);
 
     --color-button-border: black;
 
     --color-button-danger-text: black;
     --color-button-danger-text-dark: black;
-    --color-button-danger-background: hsl(var(--color-danger-hue), 100%, 90%);
-    --color-button-danger-background-dark: hsl(var(--color-danger-hue), 100%, 70%);
+    --color-button-danger-background: hsl(0, 60%, 40%);
+    --color-button-danger-background-dark: hsl(0, 60%, 25%);
 }
 
 .button {
