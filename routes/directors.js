@@ -28,6 +28,12 @@ router.get('/new', (req, res) => {
 
 // Create Director Route
 router.post('/', async (req, res) => {
+    if (!req.body.name) {
+        return res.render('directors/new', {
+            director: req.body,
+            errorMessage: 'Error: Name is required'
+        })
+    }
     const director = new Director({
         name: req.body.name,
         description: req.body.description,

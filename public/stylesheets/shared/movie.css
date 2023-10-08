@@ -1,0 +1,61 @@
+:root {
+    --movie-poster-width: 200px;
+    --movie-poster-width-large: 325px;
+    --movie-poster-aspect-ratio: 0.75;
+}
+
+.movie-poster {
+    width: var(--movie-poster-width);
+    height: calc(var(--movie-poster-width) / var(--movie-poster-aspect-ratio));
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.movie-poster-large {
+    --movie-poster-width: var(--movie-poster-width-large);
+}
+
+.movie-grid {
+    display: grid;
+    justify-content: center;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fill, var(--movie-poster-width));
+}
+
+.movie-grid-large {
+    grid-template-columns: repeat(auto-fill, var(--movie-poster-width-large));
+}
+
+.movie-details {
+    display: flex;
+}
+
+.movie-details-label {
+    font-size: 1.2rem;
+    font-weight: 500;
+    align-self: flex-start;
+}
+
+.movie-details-grid {
+    display: grid;
+    align-content: flex-start;
+    align-items: center;
+    grid-gap: 1rem;
+    grid-template-columns: auto auto;
+}
+
+.movie-details-button-grid {
+    display: grid;
+    justify-items: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    grid-template-areas: "edit delete" "director director";
+    grid-gap: .5rem;
+    margin-top: .5rem;
+    padding-right: 2rem;
+}
+
+.movie-details-director-button {
+    grid-area: director;
+    justify-self: stretch;
+}

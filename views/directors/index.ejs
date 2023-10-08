@@ -11,13 +11,15 @@
     </div>
 </form>
 <br>
-<% if(directors && directors.length > 0) { %>
+<% if (directors && directors.length > 0) { %>
     <% directors.forEach(director => { %>
-        <div><%= director.name %></div>
-        <div class="button-row">
-            <a class="button button-primary" href="/directors/<%= director.id %>">View</a>
-            <a class="button button-primary" href="/directors/<%= director.id %>/edit">Edit</a>
-            <%- include('../partials/deleteForm.ejs', { url: `/directors/${director.id}` }) %>
+        <div class="director-row">
+            <div class="director-name"><%= director.name %></div>
+            <div class="button-row">
+                <a class="button button-primary" href="/directors/<%= director.id %>">View</a>
+                <a class="button button-primary" href="/directors/<%= director.id %>/edit">Edit</a>
+                <%- include('../partials/deleteForm.ejs', { url: `/directors/${director.id}` }) %>
+            </div>
         </div>
     <% }) %>
 <% } else { %>

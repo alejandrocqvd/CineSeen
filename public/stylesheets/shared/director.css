@@ -1,0 +1,50 @@
+:root {
+    --movie-poster-width: 200px;
+    --movie-poster-width-large: 325px;
+}
+
+.director-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.director-name {
+    font-size: 1.5rem;
+}
+
+.director-icon {
+    width: var(--movie-poster-width);
+    height: var(--movie-poster-width);
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.director-details {
+    display: flex;
+}
+
+.director-details-label {
+    font-size: 1.2rem;
+    font-weight: 500;
+    align-self: flex-start;
+}
+
+.director-details-grid {
+    display: grid;
+    align-content: flex-start;
+    align-items: center;
+    grid-gap: 1rem;
+    grid-template-columns: auto auto;
+}
+
+.director-details-button-grid {
+    display: grid;
+    justify-items: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    grid-template-areas: "edit delete";
+    grid-gap: .5rem;
+    margin-top: .5rem;
+    padding-right: 2rem;
+}

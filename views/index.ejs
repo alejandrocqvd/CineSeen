@@ -1,6 +1,2 @@
 <h2 class="page-header">Recently Added</h2>
-<div>
-    <% movies.forEach(movie => { %>
-        <img height="150" width="100" src="<%= movie.posterImagePath %>">
-    <% }) %>
-</div>
+<%- include('partials/movieGrid.ejs', { movies: movies, large: true }) %>

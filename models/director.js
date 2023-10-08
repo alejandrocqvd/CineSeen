@@ -9,9 +9,6 @@ const directorSchema = new mongoose.Schema({
     description: {
         type: String
     },
-    notes: {
-        type: String
-    },
     rating: {
         type: Number,
         min: 0,

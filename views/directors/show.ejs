@@ -1,14 +1,21 @@
 <h2 class="page-header"><%= director.name %></h2>
-<div class="button-row">
-    <a class="button button-primary" href="/directors/<%= director.id %>/edit">Edit</a>
-    <%- include('../partials/deleteForm.ejs', { url: `/directors/${director.id}`}) %>
+<div class="director-details">
+    <div>
+        <img class="director-icon" src="<%= director.iconImagePath %>">
+        <div class="director-details-button-grid">
+            <a class="button button-primary" href="/directors/<%= director.id %>/edit">Edit</a>
+            <%- include('../partials/deleteForm.ejs', { url: `/directors/${director.id}`}) %>
+        </div>
+    </div>
+    <div class="director-details-grid">
+        <div class="director-details-label">Rating: </div>
+        <div><%= director.rating %></div>
+        <div class="director-details-label">Description: </div>
+        <div><%= director.description %></div>
+    </div>
 </div>
-<img width="150" height="150" src="<%= director.iconImagePath %>">
-<div>Rating: <%= director.rating %></div>
-<div>Description: <%= director.description %></div>
+<br>
 <% if (filmography.length > 0) { %>
     <h2 class="page-header">Filmography</h2>
-    <% filmography.forEach(movie => { %>
-        <img height="150" width="100" src="<%= movie.posterImagePath %>">
-    <% }) %>
+    <%- include('../partials/movieGrid', { movies: filmography }) %>
 <% } %>
